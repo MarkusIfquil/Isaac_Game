@@ -4,16 +4,16 @@
 
 using namespace std;
 
-bool game_running = 1;
-int isaac_x = 9;
+bool game_running = 1; //megnezi hogy a jatek el van-e inditva
+int isaac_x = 9;    //kezdo pozicio
 int isaac_y = 4;
-int tear_x = 0;
+int tear_x = 0;    
 int tear_y = 0;
-int tear_direction = 0;
-char floor_tile = '.';
-char isaac = 1;
+int tear_direction = 0;    //mutatja melyik iranyba lett kilove
+char floor_tile = '.';    //a padlo
+char isaac = 1;    //a jatekos
 
-void shoot_input()
+void shoot_input()    //i,j,k es l betut hasznalunk a lovesre
 {
     #define SHOOT_UP 'i'
     #define SHOOT_DOWN 'k'
@@ -21,65 +21,65 @@ void shoot_input()
     #define SHOOT_RIGHT 'l'
 
 
-    int c = 0;
+    int input = 0;
     switch ((c = _getch())) {
     case SHOOT_UP:
         tear_x = isaac_x;
         tear_y = isaac_y;
-        tear_direction = 1;
+        tear_direction = 1;    //tear direction 1, ha felfele lovunk
         break;
     case SHOOT_DOWN:
         tear_x = isaac_x;
         tear_y = isaac_y;
-        tear_direction = 2;
+        tear_direction = 2;    //tear direction 2, ha lefele lovunk
         break;
     case SHOOT_LEFT:
         tear_x = isaac_x;
         tear_y = isaac_y;
-        tear_direction = 3;
+        tear_direction = 3;    //tear direction 3, ha balra lovunk
         break;
     case SHOOT_RIGHT:
         tear_x = isaac_x;
         tear_y = isaac_y;
-        tear_direction = 4;
+        tear_direction = 4;     //tear direction 4, ha jobbra lovunk
         break;
     case 'w':
         if(isaac_y > 1)
-            isaac_y -= 1;
+            isaac_y -= 1;    //w vel megyunk felfele
         break;
     case 'a':
         if(isaac_x > 1)
-            isaac_x -= 1;
+            isaac_x -= 1;    //a vel megyunk balra
         break;
     case 's':
         if (isaac_y < 7)
-            isaac_y += 1;
+            isaac_y += 1;    //s vel megyunk lefele
         break;
     case 'd':
         if(isaac_x < 17)
-            isaac_x += 1;
+            isaac_x += 1;    //d vel megyunk jobbra
         break;
     case 27:
-        game_running = 0;
-        break;
+        game_running = 0;    //ha Esc-t nyomunk leall a jatek
+        break;    
     default:
         break;
     }
 }
 
-void check_if_issac_there_x(int j,int i, int isaac_x, int isaac_y, char floor_tile, int tear_x, int tear_y)
+void check_if_isaac_there_x(int j,int i, int isaac_x, int isaac_y, char floor_tile, int tear_x, int tear_y)
 {
     if (isaac_x == i && isaac_y == j)
     {
-        printf("%c", isaac);
+        printf("%c", isaac);    //ha a jatekos ezen a helyen van, akkor a jatekos karaktert mutatja
     }
     else if (tear_x == i && tear_y == j)
     {
-        printf("O");
+        printf("O");    //ha egy tear van ezen a helyen van, akkor a tear karaktert mutatja
     }
     else
     {
-        printf(".");
+        printf(".");    //ha sem a jatekos sem egy tear nincs itt a padlot mutatja
     }
 }
 
@@ -147,7 +147,7 @@ void arena_render()
                     printf("-");
                     break;
                 default:
-                    check_if_issac_there_x(j, i, isaac_x, isaac_y, floor_tile, tear_x,tear_y);
+                    check_if_isaac_there_x(j, i, isaac_x, isaac_y, floor_tile, tear_x,tear_y);
                     break;
                 }
             }
@@ -164,7 +164,7 @@ void arena_render()
                     printf(")");
                     break;
                 default:
-                    check_if_issac_there_x(j, i, isaac_x, isaac_y, floor_tile, tear_x, tear_y);
+                    check_if_isaac_there_x(j, i, isaac_x, isaac_y, floor_tile, tear_x, tear_y);
                     break;
                 }
             }
@@ -185,7 +185,7 @@ void arena_render()
                     printf("|");
                     break;
                 default:
-                    check_if_issac_there_x(j, i, isaac_x, isaac_y, floor_tile, tear_x, tear_y);
+                    check_if_isaac_there_x(j, i, isaac_x, isaac_y, floor_tile, tear_x, tear_y);
                     break;
                 }
             }
