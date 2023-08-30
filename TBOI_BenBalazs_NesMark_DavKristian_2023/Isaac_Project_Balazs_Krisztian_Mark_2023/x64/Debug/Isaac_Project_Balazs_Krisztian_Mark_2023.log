@@ -1,0 +1,2 @@
+﻿  Isaac_Project_Balazs_Krisztian_Mark_2023.cpp
+C:\Users\Lenovo\source\repos\Isaac_Project_Balazs_Krisztian_Mark_2023\Isaac_Project_Balazs_Krisztian_Mark_2023\Isaac_Project_Balazs_Krisztian_Mark_2023.cpp(169,28): error C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
