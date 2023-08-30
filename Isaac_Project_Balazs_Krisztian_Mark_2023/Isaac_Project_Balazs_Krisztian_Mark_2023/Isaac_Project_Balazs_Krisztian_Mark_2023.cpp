@@ -269,6 +269,6 @@ int main()
             }
         }
         Sleep(500); //frame rate (1 fps)
-        system("clrs");
+        system("cls");
     }
 }
