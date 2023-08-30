@@ -1,4 +1,0 @@
-﻿  Isaac_Project_Balazs_Krisztian_Mark_2023.cpp
-C:\Users\Lenovo\source\repos\Isaac_Project_Balazs_Krisztian_Mark_2023\Isaac_Project_Balazs_Krisztian_Mark_2023\Isaac_Project_Balazs_Krisztian_Mark_2023.cpp(260,16): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
-C:\Users\Lenovo\source\repos\Isaac_Project_Balazs_Krisztian_Mark_2023\Isaac_Project_Balazs_Krisztian_Mark_2023\Isaac_Project_Balazs_Krisztian_Mark_2023.cpp(260,16): message : consider using '%zd' in the format string
-  Isaac_Project_Balazs_Krisztian_Mark_2023.vcxproj -> C:\Users\Lenovo\source\repos\Isaac_Project_Balazs_Krisztian_Mark_2023\x64\Debug\Isaac_Project_Balazs_Krisztian_Mark_2023.exe
