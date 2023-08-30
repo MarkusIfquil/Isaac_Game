@@ -22,7 +22,7 @@ void shoot_input()    //i,j,k es l betut hasznalunk a lovesre
 
 
     int input = 0;
-    switch ((c = _getch())) {
+    switch ((input = _getch())) {
     case SHOOT_UP:
         tear_x = isaac_x;
         tear_y = isaac_y;
